@@ -11,7 +11,6 @@ const PopularMovies = () => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
       })
-      const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
     const [movieItems, setMovieItems] = useState([]);
 
