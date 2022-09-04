@@ -37,8 +37,8 @@ const Genres = () => {
 
     return (
         <div className='my-2'>
-            <div className='text-left text-xl p-2 row-span-1'>
-                Favourite Genres
+            <div className='text-left text-lg lg:text-xl p-2 row-span-1'>
+                Fav Genres
             </div>
             <div className='content-center row-span-5 '>
                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 container w-fit">
@@ -52,10 +52,10 @@ const Genres = () => {
                 </div>
             </div>
             <div className='grid grid-cols-3 my-5'>
-                <div className='inline-flex col-span-2'>
+                <div className='inline-flex col-span-2 items-center'>
                     <div className='bg-gray-400 text-black rounded-full text-lg w-7 px-2 mx-1'>+</div>
                     <div className='text-gray-400 text-xs lg:text-lg'>
-                        Add your favorite genres
+                        Add your fav genres
                     </div>
                 </div>
             </div>

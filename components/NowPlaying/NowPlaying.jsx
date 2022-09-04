@@ -24,10 +24,10 @@ const NowPlaying = () => {
             try {
                 const response = await tmdbApi.nowPlaying({ params });
                 if (isDesktopOrLaptop) {
-                    setMovieItems(response.results.slice(0, 3));
-                    console.log(response.results.slice(0, 3));
+                    setMovieItems(response.results.slice(0, 2));
+                    console.log(response.results.slice(0, 2));
                 } else {
-                    setMovieItems(response.results.slice(0,2));
+                    setMovieItems(response.results.slice(0,1));
                     console.log(response.results.slice(0,2));
                 }
 
@@ -43,12 +43,12 @@ const NowPlaying = () => {
             <div className='text-left text-xl p-2 row-span-1'>
                 Continue watching
             </div>
-            <div className='content-center row-span-5'>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+            <div className='content-center row-span-5 w-auto'>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                     {
                         movieItems.map((item, i) => (
                             <div key={i} className="col-span-1">
-                                <img src={apiConfig.w500Image(item.backdrop_path)} alt="" className='rounded-xl w-5/6' />
+                                <img src={apiConfig.w500Image(item.backdrop_path)} alt="" className='w-5/6 h-auto rounded-3xl' />
                             </div>
                         ))
                     }

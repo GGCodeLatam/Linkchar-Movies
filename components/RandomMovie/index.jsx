@@ -46,9 +46,6 @@ const NowPlaying = () => {
 
     return (
         <div className='m-2 mr lg:mr-20'>
-            <div className='text-left text-xl p-2 row-span-1'>
-                Discover
-            </div>
             <div className='content-center row-span-5'>
                 <div className="grid grid-cols-1 gap-3">
                     <img src={apiConfig.originalImage(movieItems.backdrop_path)} alt="" className='w-full h-72 rounded-3xl' />

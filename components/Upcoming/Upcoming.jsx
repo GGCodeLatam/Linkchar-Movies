@@ -26,8 +26,8 @@ const Upcoming = () => {
 
 
     return (
-        <div className='m-2'>
-            <div className='text-left text-xl p-2'>
+        <div className='mx-2'>
+            <div className='text-left text-xl mb-2 px-2'>
                 New Trailers
             </div>
             <div className='content-center'>
