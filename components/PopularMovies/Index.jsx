@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect, useRef } from 'react'
-import tmdbApi, { category, movieType } from '../../api/tmdbApi';
+import tmdbApi, { movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useMediaQuery } from 'react-responsive'
 
