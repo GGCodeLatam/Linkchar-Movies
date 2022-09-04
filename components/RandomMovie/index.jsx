@@ -7,26 +7,29 @@ import random from 'random'
 
 const NowPlaying = () => {
 
-    const [randomMovie, setRandomMovie] = useState(9);
+
+    const [randomMovie, setRandomMovie] = useState(1);
 
     useEffect(() => {
-            const aleatorio = async () => {
-                let min;
-                let max;
-                try {
-                    const response = random.int((min = 10), (max = 20));
-                    setRandomMovie(response);
-                } catch (err) {
-                    console.log(err)
-                }
+        const aleatorio = async () => {
+            let min;
+            let max;
+            try {
+                const response = random.int((min = 10), (max = 20));
+                setRandomMovie(response);
+            } catch (err) {
+                console.log(err)
             }
-            aleatorio();
+        }
+        aleatorio();
         // eslint-disable-next-line react-hooks/exhaustive-deps
+
     }, [])
 
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
     })
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
 
     const [movieItems, setMovieItems] = useState([]);
@@ -39,8 +42,10 @@ const NowPlaying = () => {
                 const response = await tmdbApi.nowPlaying({ params });
                 if (isDesktopOrLaptop) {
                     setMovieItems(response.results[randomMovie]);
+                    console.log(response.results[2]);
                 } else {
                     setMovieItems(response.results[randomMovie]);
+                    console.log(response.results[2]);
                 }
 
             } catch (err) {
@@ -54,8 +59,8 @@ const NowPlaying = () => {
     return (
         <div className='m-2 mr lg:mr-20'>
             <div className='content-center row-span-5'>
-                <div className="grid grid-cols-1 gap-3 relative">
-                    <img src={apiConfig.w500Image(movieItems.backdrop_path)} alt="" className='w-full h-72 rounded-3xl' />
+                <div className="grid grid-cols-1 gap-3">
+                    <img src={apiConfig.originalImage(movieItems.backdrop_path)} alt="" className='w-full h-72 rounded-3xl' />
                 </div>
             </div>
         </div>
