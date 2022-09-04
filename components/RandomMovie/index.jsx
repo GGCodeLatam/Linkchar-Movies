@@ -11,7 +11,6 @@ const NowPlaying = () => {
     const [randomMovie, setRandomMovie] = useState(9);
 
     useEffect(() => {
-        setTimeout(() => {
             const aleatorio = async () => {
                 let min;
                 let max;
@@ -22,7 +21,7 @@ const NowPlaying = () => {
                     console.log(err)
                 }
             }
-        }, 1000);
+            aleatorio();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -42,10 +41,8 @@ const NowPlaying = () => {
                 const response = await tmdbApi.nowPlaying({ params });
                 if (isDesktopOrLaptop) {
                     setMovieItems(response.results[randomMovie]);
-                    console.log(response.results[2]);
                 } else {
                     setMovieItems(response.results[randomMovie]);
-                    console.log(response.results[2]);
                 }
 
             } catch (err) {
