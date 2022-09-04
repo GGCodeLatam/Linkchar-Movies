@@ -1,17 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect, useRef } from 'react'
-import tmdbApi, { category, movieType } from '../../api/tmdbApi';
+import tmdbApi, { category, movieType , options} from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useMediaQuery } from 'react-responsive'
 import random from 'random'
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const NowPlaying = () => {
 
-    let min;
-    let max;
 
-    const options = random.int((min = 1), (max = 20))
+    const [randomMovie, setRandomMovie] = useState(1);
+
+    useEffect(() => {
+        const randomMovie = async () => {
+            let min;
+            let max;
+            random.int((min = 10), (max = 20))
+        }
+        setRandomMovie
+    },[])
 
 
 
@@ -31,10 +38,10 @@ const NowPlaying = () => {
             try {
                 const response = await tmdbApi.nowPlaying({ params });
                 if (isDesktopOrLaptop) {
-                    setMovieItems(response.results[options]);
+                    setMovieItems(response.results[randomMovie]);
                     console.log(response.results[2]);
                 } else {
-                    setMovieItems(response.results[options]);
+                    setMovieItems(response.results[randomMovie]);
                     console.log(response.results[2]);
                 }
 
