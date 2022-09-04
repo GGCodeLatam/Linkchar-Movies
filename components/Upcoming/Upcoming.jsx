@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect, useRef } from 'react'
 import tmdbApi, { movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
