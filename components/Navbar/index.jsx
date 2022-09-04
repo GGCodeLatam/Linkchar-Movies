@@ -30,7 +30,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <ul className={`md:flex md:items-center md:pb-0 absolute md:static bg-gray-800 md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
+            <ul className={`md:flex md:items-center md:pb-0 absolute md:static bg-gray-900 md:z-auto left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 ' : 'top-[-490px]'}`}>
                 {
                     Links.map((link) => (
                         <li key={link.name} className='md:ml-8 md:my-0 my-7'>
@@ -67,9 +67,11 @@ const Navbar = () => {
                 </div>
                 <div className="grid grid-cols-2 content-center">
                     <Image src={User} alt="user" />
+                    <div className=''>
                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6" fill="none">
                         <path d="M1 1L5 5L9 1" stroke="#C4C4C4" />
                     </svg>
+                    </div>
                 </div>
             </div>
         </div>
