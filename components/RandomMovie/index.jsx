@@ -4,7 +4,6 @@ import tmdbApi, { category, movieType, options } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useMediaQuery } from 'react-responsive'
 import random from 'random'
-import Image from 'next/image';
 
 const NowPlaying = () => {
 
@@ -28,7 +27,6 @@ const NowPlaying = () => {
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
     })
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
 
     const [movieItems, setMovieItems] = useState([]);

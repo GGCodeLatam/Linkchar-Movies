@@ -5,9 +5,6 @@ import apiConfig from '../../api/apiConfig';
 import { useMediaQuery } from 'react-responsive'
 
 
-
-
-
 const NowPlaying = () => {
 
     const isDesktopOrLaptop = useMediaQuery({
