@@ -30,7 +30,8 @@ const NowPlaying = () => {
             }
         }
         getMovies();
-    }, [isDesktopOrLaptop]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div className='m lg:m-2 mr-0 lg:mr-14'>

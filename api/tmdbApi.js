@@ -34,7 +34,7 @@ const tmdbApi = {
     },
     nowPlaying: (params) => {
         const url = 'movie/now_playing/';
-        return axiosClient.get(url, {params: {}});
+        return axiosClient.get(url, params);
     },
     genres: (params) => {
         const url = 'genre/movie/list'
