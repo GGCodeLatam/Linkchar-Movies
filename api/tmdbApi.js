@@ -1,11 +1,4 @@
 import axiosClient from "./axiosClient";
-import random from 'random';
-
-
-let min;
-let max;
-
-export const options = random.int((min = 10), (max = 99))
 
 export const category = {
     movie: 'movie',
@@ -48,9 +41,9 @@ const tmdbApi = {
         const url = category[cate] + '/' + id + '/videos';
         return axiosClient.get(url, {params: {}});
     },
-    search: (cate, params) => {
-        const url = 'search/' + id + category[cate];
-        return axiosClient.get(url, params);
+    search: (params, query, id ) => {
+        const url = 'search/movie?' + 'api_key=5b49a363432f2c7c8313eea227c49945' + '&query=' + query;
+        return axiosClient.get(url);
     },
     detail: (cate, id, params) => {
         const url = category[cate] + '/' + id;

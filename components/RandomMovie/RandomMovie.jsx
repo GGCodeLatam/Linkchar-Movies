@@ -16,23 +16,14 @@ const NowPlaying = () => {
 
     const [movieItems, setMovieItems] = useState([]);
 
-    function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-
     useEffect(() => {
         const getMovies = async () => {
             const params = { page: 1 }
             try {
                 const response = await tmdbApi.getMoviesList(movieType.popular, { params });
-                if (isDesktopOrLaptop) {
                     let max = 10;
                     let min = 2;
                     setMovieItems(response.results[Math.floor(Math.random() * (max - min + 1)) + min]);
-                } else {
-                    setMovieItems(response.results[Math.floor(Math.random() * (max - min + 1)) + min]);
-                }
-
             } catch (err) {
                 console.log(err);
             }
