@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect, useRef } from 'react'
-import tmdbApi, { category, movieType } from '../../api/tmdbApi';
+import React, { useState, useEffect } from 'react'
+import tmdbApi, { movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useMediaQuery } from 'react-responsive'
 
@@ -27,8 +27,8 @@ const NowPlaying = () => {
                     console.log(response.results.slice(0,2));
                 }
 
-            } catch {
-                console.log('error');
+            } catch (err) {
+                console.log(err);
             }
         }
         getMovies();

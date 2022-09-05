@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import tmdbApi, { movieType } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import { useMediaQuery } from 'react-responsive'
@@ -27,8 +27,8 @@ const PopularMovies = () => {
                     console.log(response.results.slice(0,6));
                 }
 
-            } catch {
-                console.log('error');
+            } catch (err) {
+                console.log(err);
             }
         }
         getMovies();

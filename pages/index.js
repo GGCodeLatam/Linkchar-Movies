@@ -4,11 +4,11 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Navbar from '../components/Navbar';
 import Layout from '../components/Layout';
-import RandomMovie from '../components/RandomMovie';
-import PopularMovies from '../components/PopularMovies/Index';
+import RandomMovie from '../components/RandomMovie/RandomMovie';
+import PopularMovies from '../components/PopularMovies/PopularMovies';
 import NowPlaying from '../components/NowPlaying/NowPlaying';
-import Upcoming from '../components/Upcoming/Upcoming';
-import Genres from '../components/Genres/Genres';
+import Upcoming from '../components/Upcoming/NewTrailers';
+
 
 export default function Home() {
 
