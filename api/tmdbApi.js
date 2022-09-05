@@ -33,7 +33,7 @@ const tmdbApi = {
         return axiosClient.get(url, params);
     },
     nowPlaying: (params) => {
-        const url = 'movie/now_playing/';
+        const url = 'movie/now_playing/?';
         return axiosClient.get(url, params);
     },
     genres: (params) => {
