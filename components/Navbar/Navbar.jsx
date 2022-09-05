@@ -4,9 +4,16 @@ import Image from 'next/image'
 import tmdbApi, { category } from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
 import Search from './Search';
+import { useMediaQuery } from 'react-responsive'
+
 
 
 const Navbar = (props) => {
+
+
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 1224px)'
+      })
 
     let Links = [
         { name: "Movies", link: "/" },
@@ -74,7 +81,7 @@ const Navbar = (props) => {
             <div className='col-span-6 lg:col-span-4 flex place-content-end w-full gap-x-2'>
             <div className='flex gap-2'>
                     {/* <input placeholder='Search' className='mx-2 px-2 w-1/2 lg:w-full bg-gray-700 rounded-lg border-solid border-white text-white' /> */}
-                    <Search />
+                    {isDesktopOrLaptop ? <Search /> : "" }
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-6 h-6">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>

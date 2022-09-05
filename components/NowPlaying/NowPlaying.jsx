@@ -52,6 +52,8 @@ const NowPlaying = () => {
                                         </div>
                                         <p className="opacity-0 text-white text-xs group-hover:opacity-0 lg:group-hover:opacity-80 transform duration-500">
                                             {item.overview}
+                                            <br/>
+                                            <strong>Country language: {item.original_language}</strong>
                                         </p>
                                     </div>
                                 </article>

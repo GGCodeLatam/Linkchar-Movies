@@ -18,7 +18,7 @@ export default function Home() {
         <div className='bg-gray-900 text-center text-white py-2  rounded-lg col-span-2 lg:col-span-3 row-span-2 lg:row-span-1'>
           <RandomMovie />
         </div>
-        <div className='bg-gray-900 text-center text-white py-2  rounded-lg text-4xl col-span-2 lg:col-span-3'>
+        <div className='bg-gray-900 text-center text-white py-2  rounded-lg text-4xl col-span-2 lg:col-span-3 py-5'>
         <NowPlaying />
         </div>
         <div className='bg-gray-900 text-center text-white py-2  rounded-lg text-4xl col-span-4 lg:col-span-3'>

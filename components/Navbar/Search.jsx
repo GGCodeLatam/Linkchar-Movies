@@ -6,7 +6,10 @@ import { useMemo, useRef, useState } from 'react'
 import { createAutocomplete } from '@algolia/autocomplete-core'
 import Link from 'next/link'
 
-const AutocompleteItem = ({ results }) => {
+
+
+const AutocompleteItem = ({results}) => {
+
   return (
     <li>
       <Link href={`/`}>
@@ -34,7 +37,7 @@ export default function Search (props) {
       sourceId: 'results',
       getItems: ({ query }) => {
         if (!!query) {
-          return fetch(`https://api.themoviedb.org/3/search/movie?api_key=5b49a363432f2c7c8313eea227c49945&language=en-US&query=${query}&page=1`)
+          return fetch(`https://api.themoviedb.org/3/search/movie?api_key=5b49a363432f2c7c8313eea227c49945&language=en-US&query=${query}`)
             .then(res => res.json())
         }
       }
@@ -42,9 +45,6 @@ export default function Search (props) {
     ...props
   }), [props])
 
-  function useResults(r) {
-    console.log(r)
-}
 
   const formRef = useRef(null)
   const inputRef = useRef(null)
@@ -72,7 +72,7 @@ export default function Search (props) {
                   {items.length > 0 && (
                     <ul {...autocomplete.getListProps()}>
                       {
-                        items.map(item => <AutocompleteItem key={item.results} {...item} />)
+                        items.map(results => <AutocompleteItem key={results} {...props}/>)
                       }
                     </ul>
                   )}

@@ -39,15 +39,30 @@ const PopularMovies = () => {
 
     return (
         <div className='m-2'>
-            <div className='text-left text-xl p-2 row-span-1'>
+            <div className='text-left text-xl pb-5 row-span-1'>
                 Popular Movies
             </div>
-            <div className='content-center row-span-5'>
+            <div className='content-center row-span-5 h-full'>
                 <div className="grid grid-cols-3 gap-3">
                     {
                         movieItems.map((item, i) => (
                             <div key={i} className="col-span-1">
-                                <img src={apiConfig.w500Image(item.backdrop_path)} alt="" className='w-5/6 h-auto rounded-xl' />
+                            <article className="shadow-xl rounded-3xl bg-cover bg-center h-24 lg:h-36 w-5/6 transform duration-500 hover:-translate-y-5 cursor-pointer group" style={{ backgroundImage: `url(${apiConfig.w500Image(item.backdrop_path)})` }}>
+                                    <div className="bg-black rounded-3xl bg-opacity-20 h-24 lg:h-36 w-full px-2 lg:px-5 flex flex-wrap flex-row  pt-22  lg:pt-18 hover:bg-opacity-75 transform duration-300">
+                                        <h1 className="text-white text-xs lg:text-xl transform translate-y-5 group-hover:translate-y-0 duration-300 drop-shadow-lg shadow-black">
+                                            {item.title}
+                                        </h1>
+                                        {isDesktopOrLaptop ?
+                                            <p className="opacity-0  text-white text-xs group-hover:opacity-0 lg:group-hover:opacity-80 transform duration-500">
+                                            {item.overview}
+                                            <br/>
+                                            <strong>Country language: {item.original_language}</strong>
+                                        </p>
+                                        
+                                        :
+                                        ""}
+                                    </div>
+                                </article>
                             </div>
                         ))
                     }
