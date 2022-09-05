@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react'
 import tmdbApi from '../../api/tmdbApi';
 import apiConfig from '../../api/apiConfig';
