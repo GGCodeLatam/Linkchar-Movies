@@ -26,7 +26,6 @@ const PopularMovies = () => {
                     setMovieItems(response.results.slice(0,6));
                     console.log(response.results.slice(0,6));
                 }
-
             } catch (err) {
                 console.log(err);
             }

@@ -33,7 +33,7 @@ const NowPlaying = () => {
         }
         getMovies();
            // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [movieItems]);
 
     return (
         <div className='m-2'>
