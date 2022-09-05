@@ -37,7 +37,7 @@ const NowPlaying = () => {
 
     return (
         <div className='m-2'>
-            <div className='text-left text-xl p-2 row-span-1'>
+            <div className='text-left text-lg p-2 row-span-1'>
                 Continue watching
             </div>
             <div className='content-center row-span-5 w-auto'>
