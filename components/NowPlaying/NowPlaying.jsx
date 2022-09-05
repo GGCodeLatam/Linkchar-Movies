@@ -9,7 +9,7 @@ const NowPlaying = () => {
 
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
-      })
+    })
 
 
     const [movieItems, setMovieItems] = useState([]);
@@ -23,8 +23,8 @@ const NowPlaying = () => {
                     setMovieItems(response.results.slice(0, 2));
                     console.log(response.results.slice(0, 2));
                 } else {
-                    setMovieItems(response.results.slice(0,1));
-                    console.log(response.results.slice(0,2));
+                    setMovieItems(response.results.slice(0, 1));
+                    console.log(response.results.slice(0, 2));
                 }
 
             } catch (err) {
@@ -32,11 +32,11 @@ const NowPlaying = () => {
             }
         }
         getMovies();
-           // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [movieItems]);
 
     return (
-        <div className='m-2'>
+        <div className='m lg:m-2 mr-0 lg:mr-14'>
             <div className='text-left text-lg p-2 row-span-1'>
                 Continue watching
             </div>
@@ -45,7 +45,18 @@ const NowPlaying = () => {
                     {
                         movieItems.map((item, i) => (
                             <div key={i} className="col-span-1">
-                                <img src={apiConfig.w500Image(item.backdrop_path)} alt="" className='w-5/6 h-auto rounded-3xl' />
+                                <article className="m-5 shadow-xl rounded-3xl bg-cover bg-center w-auto h-20 lg:h-48 transform duration-500 hover:-translate-y-5 cursor-pointer group" style={{backgroundImage: `url(${apiConfig.w500Image(item.backdrop_path)})`}}>
+                                    <div className="bg-black rounded-3xl bg-opacity-20 w-full h-20 lg:h-48 px-10 flex flex-wrap flex-row pt-18 hover:bg-opacity-75 transform duration-300">
+                                        <h1 className="text-white text-xs lg:text-xl transform translate-y-5 group-hover:translate-y-0 duration-300">
+                                            {item.title}
+                                        </h1>
+                                        <div className="w-auto h-auto bg-yellow-500 rounded-full mb-2 transform translate-y-5 group-hover:translate-y-0 duration-300">
+                                        </div>
+                                        <p className="opacity-0 text-white text-xs group-hover:opacity-80 transform duration-500">
+                                            {item.overview}
+                                        </p>
+                                    </div>
+                                </article>
                             </div>
                         ))
                     }
