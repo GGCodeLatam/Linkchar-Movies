@@ -8,24 +8,6 @@ import random from 'random'
 const NowPlaying = () => {
 
 
-    const [randomMovie, setRandomMovie] = useState(1);
-
-    useEffect(() => {
-        const aleatorio = async () => {
-            let min;
-            let max;
-            try {
-                const response = random.int((min = 10), (max = 20));
-                setRandomMovie(response);
-            } catch (err) {
-                console.log(err)
-            }
-        }
-        aleatorio();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-
-    }, [])
-
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 1224px)'
     })
@@ -34,18 +16,21 @@ const NowPlaying = () => {
 
     const [movieItems, setMovieItems] = useState([]);
 
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+      }
 
     useEffect(() => {
         const getMovies = async () => {
             const params = { page: 1 }
             try {
-                const response = await tmdbApi.nowPlaying({ params });
+                const response = await tmdbApi.getMoviesList(movieType.popular, { params });
                 if (isDesktopOrLaptop) {
-                    setMovieItems(response.results[randomMovie]);
-                    console.log(response.results[2]);
+                    let max = 10;
+                    let min = 2;
+                    setMovieItems(response.results[Math.floor(Math.random() * (max - min + 1)) + min]);
                 } else {
-                    setMovieItems(response.results[randomMovie]);
-                    console.log(response.results[2]);
+                    setMovieItems(response.results[Math.floor(Math.random() * (max - min + 1)) + min]);
                 }
 
             } catch (err) {
