@@ -58,7 +58,7 @@ export default function Search (props) {
   })
 
   return (
-    <form ref={formRef} className="flex justify-center" {...formProps}>
+    <form ref={formRef} className="flex justify-center z-50" {...formProps}>
       <div className="flex relative rounded-full w-auto">
         <input ref={inputRef} className='flex-1 px-2 rounded-full w-full' {...inputProps} />
       {

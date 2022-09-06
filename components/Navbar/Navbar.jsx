@@ -51,7 +51,7 @@ const Navbar = (props) => {
 
 
     return (
-        <div className='w-screen px-10 py-10 grid grid-cols-12 content-center'>
+        <div className='w-screen px-10 py-10 grid grid-cols-12 content-center z-10'>
             <div className='col-span-1'>
                 <div className='text-xl underline decoration-pink-500 decoration-4 text-left text-white'>
                     LinkChar
@@ -59,7 +59,7 @@ const Navbar = (props) => {
             </div>
 
             <div className='col-span-4 text-white w-fit content-center'>
-                <div onClick={() => setOpen(!open)} className='text-white mx-20 mt-3 cursor-pointer lg:hidden'>
+                <div onClick={() => setOpen(!open)} className='text-white mx-20 mt-3 cursor-pointer lg:hidden z-10'>
                     <div name={open ? 'close' : 'menu'}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none">
                             <path d="M1 1L5 5L9 1" stroke="#C4C4C4" />
