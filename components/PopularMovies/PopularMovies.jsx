@@ -23,8 +23,8 @@ const PopularMovies = () => {
                     setMovieItems(response.results.slice(0, 3));
                     console.log(response.results.slice(0, 3));
                 } else {
-                    setMovieItems(response.results.slice(0,6));
-                    console.log(response.results.slice(0,6));
+                    setMovieItems(response.results.slice(0,3));
+                    console.log(response.results.slice(0,3));
                 }
             } catch (err) {
                 console.log(err);

@@ -17,6 +17,8 @@ const Genres = () => {
 
     const [movieItems, setMovieItems] = useState([]);
 
+    const [favGender, setFavGender] = useState([]);
+
 
     useEffect(() => {
         const getGenres = async () => {
@@ -35,6 +37,11 @@ const Genres = () => {
         getGenres();
            // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+
+/*     useEffect(() => {
+        const addGender = 
+    }) */
 
     return (
         <div className='my-2'>

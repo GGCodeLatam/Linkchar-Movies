@@ -35,9 +35,9 @@ export default function Search (props) {
     onStateChange: ({ state }) => setAutocompleteState(state),
     getSources: () => [{
       sourceId: 'results',
-      getItems: async ({ query }) => {
+      getItems: ({ query }) => {
         if (!!query) {
-          return await fetch(`https://api.themoviedb.org/3/search/movie?api_key=5b49a363432f2c7c8313eea227c49945&language=en-US&query=${query}`)
+          return fetch(`https://api.themoviedb.org/3/search/movie?api_key=5b49a363432f2c7c8313eea227c49945&language=en-US&query=${query}`)
             .then(res => res.json())
         }
       }
