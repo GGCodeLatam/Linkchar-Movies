@@ -39,11 +39,11 @@ const PopularMovies = () => {
 
     return (
         <div className='m-2'>
-            <div className='text-left text-xl pb-5 row-span-1'>
+            <div className='text-left text-xl pb-5 row-span-1 w-full'>
                 Popular Movies
             </div>
             <div className='content-center row-span-5 h-full'>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-5 ml-3 lg:ml-5">
                     {
                         movieItems.map((item, i) => (
                             <div key={i} className="col-span-1">
@@ -58,7 +58,6 @@ const PopularMovies = () => {
                                             <br/>
                                             <strong>Country language: {item.original_language}</strong>
                                         </p>
-                                        
                                         :
                                         ""}
                                     </div>

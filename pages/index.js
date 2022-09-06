@@ -10,7 +10,7 @@ export default function Home() {
 
 
   return (
-    <div className='bg-gray-900'>
+    <div className='bg-gradient-to-r from-gray-700 via-gray-900 to-black'>
       <Layout>
         <div className='bg-gray-900 text-center text-white py-2  rounded-lg ml-2 lg:ml-10 text-4xl col-span-2 lg:col-span-1 row-span-4 md:row-span-2 lg:row-span-3'>
           <Upcoming />
@@ -18,10 +18,10 @@ export default function Home() {
         <div className='bg-gray-900 text-center text-white py-2  rounded-lg col-span-2 lg:col-span-3 row-span-2 lg:row-span-1'>
           <RandomMovie />
         </div>
-        <div className='bg-gray-900 text-center text-white py-2  rounded-lg text-4xl col-span-2 lg:col-span-3 py-5'>
+        <div className='bg-gray-900 text-center text-white py-2  rounded-lg text-4xl col-span-2 lg:col-span-3'>
         <NowPlaying />
         </div>
-        <div className='bg-gray-900 text-center text-white py-2  rounded-lg text-4xl col-span-4 lg:col-span-3'>
+        <div className='bg-gray-900 text-center text-white py-2 px-5  rounded-lg text-4xl col-span-4 lg:col-span-3'>
           <PopularMovies />
         </div>
       </Layout>
